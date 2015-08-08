@@ -40,14 +40,9 @@ def generator(num)
 end
 
 def converter(complex_password)
-	# Empty password array
-	password = []
-
-	# Build password array
-	complex_password.each_char { |char| password << char.downcase }
-
 	# Print out rememberable value
-	password.each do |val|
+	complex_password.each_char do |val|
+		val = val.downcase
 		if has_key(val) then print_key_val(val) else print "#{ val } " end
 	end
 	# Print empty line
